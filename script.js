@@ -3,9 +3,7 @@ function main() {
   window.addEventListener("deviceorientation", onOrientationChange)
 
   // grab the video display of the camera
-  navigator.mediaDevices.getUserMedia({video:{
-    facingMode: 'environment'
-  }})
+  navigator.mediaDevices.getUserMedia({video:true})
   .then(function(signal) {
     const video = document.getElementById("myVideo");
     video.srcObject = signal;
