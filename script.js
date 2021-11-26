@@ -6,18 +6,18 @@ function main() {
   navigator.mediaDevices.getUserMedia({video:{
     facingMode: 'environment'
   }})
-  // .then(function(signal) {
-  //   const video = document.getElementById("myVideo");
-  //   video.srcObject = signal;
-  //   video.play();
-  // })
-  .then(stream => {
+  .then(function(signal) {
     const video = document.getElementById("myVideo");
-    video.srcObject = stream;
-    video.onloadedmetadata = (e) => {
-      video.play();
-    }
+    video.srcObject = signal;
+    video.play();
   })
+  // .then(stream => {
+  //   const video = document.getElementById("myVideo");
+  //   video.srcObject = stream;
+  //   video.onloadedmetadata = (e) => {
+  //     video.play();
+  //   }
+  // })
   .catch(function(err) {
     alert(err);
   })
