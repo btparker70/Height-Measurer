@@ -12,5 +12,12 @@ function onOrientationChange(event) {
   if (angle < 0) {
     angle = 0;
   }
-  console.log(angle)
+
+  // measured distance to object
+  const distanceToObject = 20;
+  // get the height side with angle from the phone by converting it
+  // to radians and multiplying it by the distance side
+  const height = Math.tan(angle * Math.PI/180) * distanceToObject;
+  document.getElementById("heightInfo").innerHTML = 
+    height.toFixed(1) + " m or " + (height*3.28).toFixed(1) + " ft (" + angle.toFixed(1) + "&deg;)";
 }
