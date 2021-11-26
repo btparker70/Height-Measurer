@@ -6,10 +6,17 @@ function main() {
   navigator.mediaDevices.getUserMedia({video:{
     facingMode: 'environment'
   }})
-  .then(function(signal) {
+  // .then(function(signal) {
+  //   const video = document.getElementById("myVideo");
+  //   video.srcObject = signal;
+  //   video.play();
+  // })
+  .then(stream => {
     const video = document.getElementById("myVideo");
-    video.srcObject = signal;
-    video.play();
+    video.srcObject = stream;
+    video.onloadedmetadata = (e) => {
+      video.play();
+    }
   })
   .catch(function(err) {
     alert(err);
