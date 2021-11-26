@@ -14,7 +14,9 @@ function onOrientationChange(event) {
   }
 
   // measured distance to object
-  const distanceToObject = 20;
+  const distanceToObject = document.getElementById("mySlider").value;
+  document.getElementById("myLabel").innerHTML = 
+    "Distance to object: " + distanceToObject +" meters";
   // get the height side with angle from the phone by converting it
   // to radians and multiplying it by the distance side
   const height = Math.tan(angle * Math.PI/180) * distanceToObject;
