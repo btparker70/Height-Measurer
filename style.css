@@ -3,7 +3,7 @@ body{
     text-align:center;
     overflow:hidden;
     font-size:25px;
-    font-family:Arial;
+    font-family: Arial, Helvetica, sans-serif;
     color:white;
     text-shadow:0 0 4px #000, 0 0 4px #000;
 }
