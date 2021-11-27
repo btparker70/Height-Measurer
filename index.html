@@ -23,6 +23,7 @@
         if (response == 'granted') {
             console.log("accelerometer permission granted");
             main()
+            onOrientationChange(event)
         }
     });
 }
