@@ -24,8 +24,8 @@ function main() {
   .catch(function(err) {
     alert(err);
   })
-}
-  })
+}})
+  }
 
 function onOrientationChange(event) {
   // measure how the phone rotates on the beta axis
