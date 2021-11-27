@@ -25,7 +25,6 @@ function main() {
 }
 
 function onOrientationChange(event) {
-  alert("yes working")
   // measure how the phone rotates on the beta axis
   let beta_angle = event.beta
   // change the 0 degree orientation from "flat" to "upright"

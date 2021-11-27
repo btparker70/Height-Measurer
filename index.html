@@ -24,10 +24,8 @@
         }
       })
       .catch(console.error)
-      if (!window.DeviceOrientationEvent) {
-    alert("Sorry, but Device Orientation is not suported!");
-      } else {
-        alert("device orientation on")
-      }
+      window.addEventListener("deviceorientation", function(){
+        alert("phone moved")
+      })
     </script>
 </html>
