@@ -1,4 +1,5 @@
 function main() {
+  alert("main")
   // this is the accelerometer in the mobile device
   window.addEventListener("deviceorientation", onOrientationChange)
 
