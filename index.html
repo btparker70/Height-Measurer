@@ -5,8 +5,8 @@
         <link rel="stylesheet" href="style.css">
         <script src="script.js"></script>
     </head>
-    <body >
-      <button id="accelPermsButton"  style="height:10px;" onclick="getAccel()"><h1>Get Accelerometer Permissions</h1></button>
+    <body onload="main()">
+        <button id="accelPermsButton"  style="height:10px;" onclick="getAccel()"><h1>Get Accelerometer Permissions</h1></button>
         <input id="mySlider" type="range" min="1" max="50" value="20">
         <div id="myLabel"></div>
         <div id="heightInfo"></div>
@@ -16,12 +16,13 @@
     <script>
       if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
         alert("Hello, it's me your camera")
+        console.log(window.navigator)
       }
       function getAccel(){
     DeviceMotionEvent.requestPermission().then(response => {
         if (response == 'granted') {
             console.log("accelerometer permission granted");
-            main();
+            main()
         }
     });
 }
