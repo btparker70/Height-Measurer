@@ -15,8 +15,14 @@
       if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
         alert("Hello, it's me your camera")
       }
-      if (window.addEventListener("deviceorientation") == true) {
-        alert(document.getElementById("heightInfo").innerHTML)
-      }
+      DeviceOrientationEvent.requestPermission()
+      .then(response => {
+        if (response == 'granted') {
+          window.addEventListener('deviceorientation', (e) => {
+            alert("access granted")
+          })
+        }
+      })
+      .catch(console.error)
     </script>
 </html>
