@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="style.css">
         <script src="script.js"></script>
     </head>
-    <body onload="main()">
+    <body >
       <button id="accelPermsButton"  style="height:10px;" onclick="getAccel()"><h1>Get Accelerometer Permissions</h1></button>
         <input id="mySlider" type="range" min="1" max="50" value="20">
         <div id="myLabel"></div>
@@ -21,7 +21,7 @@
     DeviceMotionEvent.requestPermission().then(response => {
         if (response == 'granted') {
             console.log("accelerometer permission granted");
-            // Do stuff here
+            main();
         }
     });
 }
