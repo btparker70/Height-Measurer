@@ -1,4 +1,6 @@
 function main() {
+  DeviceMotionEvent.requestPermission().then(response => {
+    if (response == 'granted') {
   // requestDeviceOrientation();
   // this is the accelerometer in the mobile device
   window.addEventListener("deviceorientation", onOrientationChange)
@@ -23,6 +25,7 @@ function main() {
     alert(err);
   })
 }
+  })
 
 function onOrientationChange(event) {
   // measure how the phone rotates on the beta axis
