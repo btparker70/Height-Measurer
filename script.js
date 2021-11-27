@@ -1,7 +1,7 @@
 function main() {
-  alert("main")
+  requestDeviceOrientation();
   // this is the accelerometer in the mobile device
-  window.addEventListener("deviceorientation", onOrientationChange)
+  // window.addEventListener("deviceorientation", onOrientationChange)
 
   // grab the video display of the camera
   navigator.mediaDevices.getUserMedia({video:{
@@ -43,4 +43,19 @@ function onOrientationChange(event) {
   const height = Math.tan(angle * Math.PI/180) * distanceToObject;
   document.getElementById("heightInfo").innerHTML = 
     height.toFixed(1) + " m or " + (height*3.28).toFixed(1) + " ft (" + angle.toFixed(1) + "&deg;)";
+}
+
+function requestDeviceOrientation () {
+  if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+  DeviceOrientationEvent.requestPermission()
+  .then(permissionState => {
+  if (permissionState === 'granted') {
+  window.addEventListener('deviceorientation', onOrientationChange);
+  }
+  })
+  .catch(console.error);
+  } else {
+  // handle regular non iOS 13+ devices
+  console.log ("not iOS");
+  }
 }
