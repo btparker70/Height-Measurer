@@ -10,22 +10,19 @@
         <div id="myLabel"></div>
         <div id="heightInfo"></div>
         <video autoplay playsinline id="myVideo"></video>
+        <button id="accelPermsButton"  style="height:50px;" onclick="getAccel()"><h1>Get Accelerometer Permissions</h1></button>
     </body>
     <script>
       if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
         alert("Hello, it's me your camera")
       }
-      DeviceOrientationEvent.requestPermission()
-      .then(response => {
+      function getAccel(){
+    DeviceMotionEvent.requestPermission().then(response => {
         if (response == 'granted') {
-          window.addEventListener('deviceorientation', (e) => {
-            alert("access granted")
-          })
+            console.log("accelerometer permission granted");
+            // Do stuff here
         }
-      })
-      .catch(console.error)
-      window.addEventListener("deviceorientation", function(){
-        alert("phone moved")
-      })
+    });
+}
     </script>
 </html>
