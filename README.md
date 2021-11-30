@@ -1,6 +1,11 @@
 # Height-Measurer
 Measure the height of real-world things using your phone and triangulation
 
+## How to Use
+This app is designed to run in your mobile device's browser. 
+
+Alternatively, you can run it in your computer's browser and open the dev tools. Select the 'sensors' tab and scroll down to the device with the orientation angles. When you fidget with the beta angles you will see changes in the numerical readings.
+
 ## What is Triangulation?
 In trigonometry and geometry, triangulation is the process of determining the location of a point by forming triangles to the point from known points. - Wikipedia
 
@@ -16,4 +21,4 @@ Let's say we are standing at point ***C*** and we want to measure something that
 tan C * Base = Height
 </p>
 
-Let's say we're 10 feet away from our tree and when we look at the top of the tree our angle of vision is 63degrees. Using the forumula above, we can solve for height and get 20 feet!
+Let's say we're 10 feet away from our tree and when we look at the top of the tree our angle of vision is 63 degrees. Using the forumula above, we can solve for height and get 20 feet!
